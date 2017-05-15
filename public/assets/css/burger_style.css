@@ -1,5 +1,12 @@
 body {
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 12px;
-  background: url("../assets/img/food.png");
+  background: url("../img/food.png");
+  margin: auto;
+  width: 60%; 
+}
+
+img {
+	width: 33%;
+	height: 33%;
 }

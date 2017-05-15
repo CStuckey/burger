@@ -36,17 +36,8 @@ var orm = {
 			cb(result);
 		});
 	},
-	create: function(table, cols, vals, cb) {
-		var queryString = "INSERT INTO " + table;
-
-		queryString += " (";
-		queryString += cols.toString();
-		queryString += ") ";
-		queryString += "VALUES (";
-		queryString += printQuestionMarks(vals.length);
-		queryString += ") ";
-
-		console.log(queryString);
+	create: function(vals, cb) {
+		var queryString = "INSERT INTO burgers (burger_name) VALUES(?)";
 
 		connection.query(queryString, vals, function(err, result) {
 			if (err) {

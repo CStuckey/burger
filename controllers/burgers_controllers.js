@@ -17,12 +17,10 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-	burger.create([
-		"taco"
-	], [
-		req.body.taco],
-		function() {
+	burger.create([req.body.taco],
+		function(data) {
 			res.redirect("/");
+			console.log(data);
 		});
 });
 

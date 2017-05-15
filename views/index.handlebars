@@ -1,8 +1,25 @@
 <h1>Eat-da-Taco!</h1>
 
+<div>
+	{{#each burger_name}}
+		{{#unless this.devoured}}
+			<div>
+				{{this.taco}}
+
+				<form action="/{{this.id}}?_method=PUT" method="POST">
+					<input type="hidden" name="sleepy" value="true">
+					<button type="submit">Devour it!</button>
+				</form>
+			</div>
+		{{/unless}}	
+	{{/each}}
+</div>
+	
+
+
 <form class="create-update-form" action="/" method="POST">
 	<div class="form-group">
-		<input type="text" id="ta" name="name">
+		<input type="text" id="ta" name="taco">
 		<button type="submit">Submit</button>
 		<label for="ta">Enter a taco you want to eat! Click the "Submit" button</label>
 	</div>
